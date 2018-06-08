@@ -1,1 +1,3 @@
 *.xml
+parsed_data.txt
+tmp.*

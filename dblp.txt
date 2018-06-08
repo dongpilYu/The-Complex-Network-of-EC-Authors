@@ -11,6 +11,13 @@
     EC 분야로 제한을 한다.
     Co-authorship network
 
+    Using an initial sample of authors,
+    their list of publications is checked for relevance(관련성과 적절성을 판단하기 위해)
+    대응하는 공저자들은 재귀적으로 분석되어진다.
+
+    1. 키워드들을 정의하고, 해당 키워드를 통해서 저자들의 초기 샘플을 만든다.
+    2.
+
     There are several interesting facts that can be computed on
     these co-authorship networks
     1. what kind of macroscopic values they yield
@@ -23,6 +30,9 @@
     - EuroGP
     - Evolutionary Computation
     - Genetic Programming ...
+
+    이 키워드들은 제목 또는 in the publication forum of papers에서 찾아지고
+    저자의 초기 샘플을 사용하여
 
     total papers 6199
     total authors 5492
@@ -48,10 +58,3 @@
     끝
 
 """
-
-import xml.etree.ElementTree as ET
-
-tree = ET.parse("dblp.xml")
-note = tree.getroot()
-
-print(note.items())
