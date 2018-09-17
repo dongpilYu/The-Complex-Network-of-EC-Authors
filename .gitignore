@@ -1,4 +1,4 @@
 *.pickle
 *.xml
-parsed_data.txt
 tmp.*
+parsed_data.txt
