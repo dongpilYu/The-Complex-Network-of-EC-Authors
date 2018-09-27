@@ -2,3 +2,4 @@
 *.xml
 tmp.*
 parsed_data.txt
+csv/

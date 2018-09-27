@@ -97,6 +97,8 @@ for k in actor_dict.keys():
         sum4_b = sum4_b + len(list(actor_dict[k][1]))
 
 print("10: \n")
+print(sum4_a)
+print(sum4_b)
 print(sum4_a/idx4)
 print(sum4_b/idx4)
 
