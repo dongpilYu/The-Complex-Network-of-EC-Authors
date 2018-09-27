@@ -108,8 +108,6 @@ print((sum1_b+sum2_b+sum3_b+sum4_b)/(idx1+idx2+idx3+idx4))
 print((sum4_a+sum3_a+sum2_a)/(idx1+idx2+idx3))
 print((sum4_b+sum3_b+sum2_b)/(idx1+idx2+idx3))
 
-print("----------")
-
 print(idx1)
 print(idx2)
 print(idx3)
