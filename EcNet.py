@@ -1,6 +1,10 @@
 import pickle
 import time
 
+"""
+    재귀적으로 탐색해서 추가 데이터를 수집하기 위한 코드
+
+"""
 
 start_time = time.time()
 
@@ -20,10 +24,10 @@ EC_Keywords = ['evolutionary computation', 'genetic programming', 'genetic algor
                'memetic algorithms', 'particle swarm optimization', 'swarm intelligence',
                'self-organization', 'self-organizing maps', 'competitive learning', 'fitness function']
 
-with open('actor/actor70.pickle','rb') as f:
+with open('actor/actor90.pickle','rb') as f:
     actor_dict = pickle.load(f)
 
-with open('paper/paper70.pickle', 'rb') as f:
+with open('paper/paper90.pickle', 'rb') as f:
     paper_dict = pickle.load(f)
 
 EC_actor_list = []
@@ -122,10 +126,10 @@ end_time = time.time()
 
 print("%s seconds" %(end_time - start_time))
 
-with open('./actor-recursive-3/actor70.pickle', 'wb') as handle:
+with open('./actor-recursive-3/actor90.pickle', 'wb') as handle:
     pickle.dump(actor_dict, handle)
 
-with open('./paper-recursive-3/paper70.pickle', 'wb') as handle:
+with open('./paper-recursive-3/paper90.pickle', 'wb') as handle:
     pickle.dump(paper_dict, handle)
 
 
@@ -134,4 +138,4 @@ with open('./paper-recursive-3/paper70.pickle', 'wb') as handle:
 #Initial_actor_dict[a][2] = Initial_actor_dict[a][2] or isInitial
 
 #Initial_actor_dict[a] = [set(author_array) - {a}, {title}, isInitial]
-#Initial_d[title] = [len(author_array), isInitial]
+
