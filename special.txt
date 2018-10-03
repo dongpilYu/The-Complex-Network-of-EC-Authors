@@ -25,3 +25,5 @@ Genetic Programming and Evolvable Machines
 Evolutionary Intelligence
 Swarm and Evolutionary Computation
 International Conference on Evolutionary Computation
+ICGA
+GP
