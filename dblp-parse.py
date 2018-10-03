@@ -15,7 +15,7 @@ import pickle
 """
     전체를 탐색해서 
     {저자 :({공저자 a, 공저자 b}, {논문1, 논문2}, 유전 알고리즘 관련 저자인가})
-    {논문 : 저자 수} 를 연도별로 1980이전, 1980~1990, 1990~2000, 2000~2010, 2010~
+    {논문 : 저자 수, 유전 알고리즘 관련 논문인가} 를 연도별로 1980이전, 1980~1990, 1990~2000, 2000~2010, 2010~
     5개로 분류해서 10개의 딕셔너리를 만든다. 
     중간에 꺼질 수 있기 때문에, 지속적으로 딕셔너리를 저장하는 파일을 만든다. 
     
@@ -114,16 +114,16 @@ def fast_iter(context, func, *args, **kwargs):
                     # 해당 논문을 쓴 저자는 유전 알고리즘 관련 저자가 된다.
 
                 if timing > start:
-
+                    """
                     if year < 1980:
                         make_dict(Initial_actor_dict_70, Initial_paper_dict_70, author_array, title, isInitial)
 
                     elif year < 1990:
                         make_dict(Initial_actor_dict_80, Initial_paper_dict_80, author_array, title, isInitial)
                     """
-                    elif year < 2000:
+                    if year < 2000:
                         make_dict(Initial_actor_dict_90, Initial_paper_dict_90, author_array, title, isInitial)
-
+                    """
                     elif year < 2010:
                         make_dict(Initial_actor_dict_00, Initial_paper_dict_00, author_array, title, isInitial)
 
@@ -144,32 +144,29 @@ def fast_iter(context, func, *args, **kwargs):
 
                 if timing % 10000 == 0 and timing >= start:
 
-                    with open('./actor/actor70.pickle', 'wb') as handle:
-                        pickle.dump(Initial_actor_dict_70, handle)
-                    with open('./actor/actor80.pickle', 'wb') as handle:
-                        pickle.dump(Initial_actor_dict_80, handle)
-                    """
+                    
+                    #with open('./actor/actor70.pickle', 'wb') as handle:
+                    #    pickle.dump(Initial_actor_dict_70, handle)
+                    #with open('./actor/actor80.pickle', 'wb') as handle:
+                    #    pickle.dump(Initial_actor_dict_80, handle)
                     with open('./actor/actor90.pickle', 'wb') as handle:
                         pickle.dump(Initial_actor_dict_90, handle)
-                    with open('./actor/actor00.pickle', 'wb') as handle:
-                        pickle.dump(Initial_actor_dict_00, handle)
-                    with open('./actor/actor10.pickle', 'wb') as handle:
-                        pickle.dump(Initial_actor_dict_10, handle)
+                    #with open('./actor/actor00.pickle', 'wb') as handle:
+                    #    pickle.dump(Initial_actor_dict_00, handle)
+                    #with open('./actor/actor10.pickle', 'wb') as handle:
+                    #    pickle.dump(Initial_actor_dict_10, handle)
 
-                    """
 
-                    with open('./paper/paper70.pickle','wb') as handle:
-                        pickle.dump(Initial_paper_dict_70, handle)
-                    with open('./paper/paper80.pickle','wb') as handle:
-                        pickle.dump(Initial_paper_dict_80, handle)
-                    """
+                    #with open('./paper/paper70.pickle','wb') as handle:
+                    #    pickle.dump(Initial_paper_dict_70, handle)
+                    #with open('./paper/paper80.pickle','wb') as handle:
+                    #    pickle.dump(Initial_paper_dict_80, handle)
                     with open('./paper/paper90.pickle','wb') as handle:
                         pickle.dump(Initial_paper_dict_90, handle)
-                    with open('./paper/paper00.pickle','wb') as handle:
-                        pickle.dump(Initial_paper_dict_00, handle)
-                    with open('./paper/paper10.pickle','wb') as handle:
-                        pickle.dump(Initial_paper_dict_10, handle)
-                    """
+                    #with open('./paper/paper00.pickle','wb') as handle:
+                    #    pickle.dump(Initial_paper_dict_00, handle)
+                    #with open('./paper/paper10.pickle','wb') as handle:
+                    #    pickle.dump(Initial_paper_dict_10, handle)
 
         elem.clear()
         while elem.getprevious() is not None:
@@ -177,7 +174,6 @@ def fast_iter(context, func, *args, **kwargs):
 
         # TODO
         # 딕셔너리를 저장
-
 
     del context
     # clear chunks
